@@ -23,10 +23,61 @@ Program to implement univariate Linear Regression to fit a straight line using l
 Developed by: 
 RegisterNumber:  
 */
+
+import matplotlib.pyplot as plt
+x=[5,6,3,2,6,7,1,2]
+y=[2,3,6,5,8,3,5,8]
+plt.scatter(x,y)
+plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+#assign input
+x=np.array([0,1,2,3,4,5,6,7,8,9])
+y=np.array([1,3,2,5,7,8,8,9,10,12])
+
+#mean values of input
+x_mean=np.mean(x)
+print(x_mean)
+y_mean=np.mean(y)
+print(y_mean)
+
+num=0
+denum=0
+
+for i in range(len(x)):
+  num+=(x[i]-x_mean)*(y[i]-y_mean)
+  denum+=(x[i]-x_mean)**2
+
+#find m
+m=num/denum
+
+#find b
+b=y_mean-m*x_mean
+print("m",m)
+print("b",b)
+
+#find y_pred
+y_pred=m*x+b
+print(y_pred)
+
+#plot graph
+plt.scatter(x,y)
+plt.plot(x,y_pred,color='green')
+plt.show() 
+
+
 ```
 
 ## Output:
-![best fit line](sam.png)
+
+![image](https://user-images.githubusercontent.com/114572171/201522526-87e6d703-6a79-4f75-9ce1-45da9f68a93c.png)
+
+![image](https://user-images.githubusercontent.com/114572171/201522516-2831fa1b-2150-4758-a539-a6d3f2bda5dd.png)
+
+![image](https://user-images.githubusercontent.com/114572171/201522533-bc822e8c-884c-4ed7-89ba-bd6de757bef2.png)
+
 
 
 ## Result:
